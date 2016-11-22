@@ -14,6 +14,7 @@ set :repo_url, 'repo@git.fkis.ru:/home/repo/volleyball-orel.ru.git'
  set :scm, :git
 
 set :rvm_ruby_version, '2.3.1'
+#set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -30,8 +31,16 @@ set :rvm_ruby_version, '2.3.1'
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
+
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+#namespace :deploy do
+#before :publishing , :build_frontend do
+#  on roles(:app) , in: :groups, limit: 4 do
+#    execute "rake assets:precompile"
+#  end
+#end
+#end
