@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  host: 127.0.0.1
   database: volleyball_orel
   username: volleyballorel
   password: orelvolleyball
