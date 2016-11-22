@@ -50,7 +50,16 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
+    capistrano-bundler (1.2.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
+    capistrano-rails (1.2.0)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
@@ -159,6 +168,9 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capistrano (~> 3.6)
+  capistrano-bundler (~> 1.2)
+  capistrano-rails (~> 1.2)
+  capistrano-rvm
   devise
   jbuilder (~> 2.5)
   jquery-rails
