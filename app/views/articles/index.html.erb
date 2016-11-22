@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+<% @articles.each do |article| %>
+<div class="row">
+<div class="col-md-12">
+<h2><%= link_to(article.title, article_path(article)) %></h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<%=truncate( article.content.html_safe.gsub(%r{<.*?>},''), length: 350, separator: ' ') %>
+</div>
+</div>
+<% end %>

@@ -1,0 +1,36 @@
+version: '2'
+services:
+  volleyball-orel.service.dev:
+    container_name: volleyball
+    environment:
+      SERVICE_NAME: volleyball-orel
+      VIRTUAL_HOST: volleyball-orel.service.dev
+      VIRTUAL_80_PORT: 80
+      VIRTUAL_443_PORT: 443
+      SSH_AUTH_SOCK: /ssh-agent
+    build: ./
+    ports:
+      - '3000:3000'
+#    entrypoint: setuid  1000
+    volumes:
+      - ./:/app
+      - $SSH_AUTH_SOCK:/ssh-agent # Forward local machine SSH key to docker
+#      - ./vagrant-dev/nginx/docker-nginx.conf:/etc/nginx/nginx.conf
+
+#    command:   nginx -c /etc/nginx/nginx.conf
+    command:   bundle exec rails s -b 0.0.0.0 --pid /tmp/server.pid
+    depends_on:
+      - dbvb
+  dbvb:
+    image: mysql:5.7.16
+    container_name: dbvb
+    volumes:
+      - ./config/my.cnf:/etc/mysql/my.cnf
+      - volleyball-orel-db:/var/lib/mysql
+    environment:
+      SERVICE_NAME: dbvb
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+volumes:
+  volleyball-orel-db:
+    driver: local

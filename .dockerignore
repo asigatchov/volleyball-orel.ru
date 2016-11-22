@@ -1,0 +1,7 @@
+.bundle
+vendor/bundle
+log/*
+.git
+test/
+tmp/*
+public/
