@@ -8,9 +8,9 @@
 </p>
 
   <% @team.members.each do |member| %>
-  <div class="row table-condensed" >
+  <div class="row margin-top-10" >
   <div  class="col-md-6">
-    <%= image_tag member.photo.url(:medium) , {width: 210}  %><br>
+    <%= image_tag member.photo.url(:medium) , {width: 210}  %>
   </div>
   <div  class="col-md-6">
      <h3><%= member.title %></h3><br/>

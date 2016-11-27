@@ -19,7 +19,7 @@
 
   <div class="form-group">
      <%= f.label 'Команда' %>
-     <%=  f.select(:team_id, @teams_arr , {}, class: "form-control" ) %>
+     <%=  f.select(:team_id, @teams_arr , {selected: params[:team_id] },  class: "form-control" ) %>
 
  </div>
   <div class="form-group">
