@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-  <div class="col-md-12">
+    <div class="col-md-12">
     <h1>Команды участники Орловской Волейбольной Лиги</h1>
   </div>
 </div>
 <% @teams.each do |team| %>
 <div class="row">
   <div class="col-md-11">
-        <h3><%= link_to team.title, team  %></h3>
+        <h4><%= link_to team.title, team  %></h4>
   </div>
   <div class="col-md-1">
         <% if is_admin? %>
