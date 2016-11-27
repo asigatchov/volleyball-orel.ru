@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+    <% @teams.each do |team| %>
+<div class="row">
+  <div class="">
+        <h3><%= link_to team.title, team  %></h3>
+        <% if is_admin? %>
+        <%= link_to 'Edit', edit_team_path(team) %></td>
+        <%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+</div>
+    <% end %>

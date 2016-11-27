@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ф.И.О.:</strong>
+  <%= @member.title %>
+</p>
+
+<p>
+  <strong>Дата рождения :</strong>
+  <%= @member.birthday %>
+</p>
+<p>
+  <strong>Фото :</strong>
+  <%= image_tag @member.photo.url(:medium) %>
+</p>
+
+<p>
+  <strong>Номер:</strong>
+  <%= @member.pos %>
+</p>
+
+<p>
+  <strong>В команде:</strong>
+  <%= @member.active %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
