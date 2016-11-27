@@ -9,10 +9,10 @@
 
   <% @team.members.each do |member| %>
   <div class="row margin-top-10" >
-  <div  class="col-md-6">
-    <%= image_tag member.photo.url(:medium) , {width: 210}  %>
+  <div  class="col-md-6 col-xs-4">
+    <%= image_tag member.photo.url(:medium) , {width: 210, class: "img-thumbnail"}  %>
   </div>
-  <div  class="col-md-6">
+  <div  class="col-md-6 col-xs-8">
      <h3><%= member.title %></h3><br/>
      <b>Дата рождения:</b>   <%= !member.birthday || member.birthday.strftime("%d.%m.%Y")   %><br/>
      <b>Номер игрока:</b> <%= member.pos %><br/>
