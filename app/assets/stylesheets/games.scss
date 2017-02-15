@@ -1,0 +1,44 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.score, .score_a, .score_b, .score_ab, .score_full {
+  padding: 5px;
+  color: #000;
+  font-size: 30px;
+}
+
+.score_ab{
+  text-align: center;
+}
+
+.score_a{
+  text-align: right;
+}
+
+.score_b{
+  text-align: left;
+}
+
+.score_full {
+  font-size: 16px;
+  text-align: center;
+}
+
+div.best_member{
+  position: relative;
+  min-height: 160px;
+  text-align: center;
+}
+div.name {
+  width: 100%;
+  font-size: 16px;
+}
+ div.best_member .name{
+   width: 140px;
+   background-color: #000;
+   color: #FFF;
+   position: absolute;
+   bottom: 0;
+   left: 0px;
+}

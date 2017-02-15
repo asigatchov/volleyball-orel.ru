@@ -33,6 +33,7 @@
         <%= link_to 'добавить статью', new_article_path, class: "btn btn-default" %>
         <%= link_to 'добавить команду', new_team_path , class: "btn btn-default"  %>
         <%= link_to 'добавить игрока', new_member_path, class: "btn btn-default"  %>
+        <%= link_to 'Новая игра', new_game_path, class: "btn btn-default"  %>
       </div>
       <div class="col-md-1">
        <%= link_to(current_user.email, destroy_user_session_path, :method => :delete) %>

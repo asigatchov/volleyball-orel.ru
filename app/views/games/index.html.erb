@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Архив игр</h1>
+
+<% @games.each do |game| %>
+<% if game.member_one && game.member_two %>
+    <%= render partial: "last_game", locals: {game: game} %>
+<% end %>
+
+
+
+
+<% if false %>
+---------------------------------
+<div class="row">
+<div class="col-md-8">
+<p>
+<i><b><%=   I18n.localize( game.start_at , :format => :long ) %></b></i>  <b>Место:</b> <%= game.place_name %>  </br>
+<%= game.team_one.title %> - <%= game.team_two.title %>
+<% if game.score_a && game.score_b %>
+Счет: <b><%= game.score_a %>- <%= game.score_b %></b> (<%= game.full_score %>)
+<% end %>
+</div>
+<div class="col-md-4">
+<p>
+<% if game.member_one && game.member_two %>
+<b>Лучшими игроками стали:</b><br/>
+<%= image_tag(game.member_one.photo.url(:medium), {width: 110}) %>
+<%= short_member_name(game.member_one.title)  %> - <%= game.team_one.title %><br/>
+<%= image_tag(game.member_two.photo.url(:medium), {width: 110}) %>
+<%= short_member_name(game.member_two.title)  %> - <%= game.team_two.title %><br/>
+<% end %>
+</p>
+</div>
+</div>
+
+
+        <% if is_admin?  %>
+          <%= link_to 'Show', game %>
+          <%= link_to 'Edit', edit_game_path(game) %>
+          <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+<% end %>
+<% end %>
+<br>

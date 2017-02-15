@@ -1,0 +1,60 @@
+
+
+
+<div class="row">
+<div class="col-md-12 col-xs-12 score_ab">
+<%=   I18n.localize( game.start_at , :format => :long ) %>
+</div>
+</div>
+<div class="row">
+<div class="col-md-5 col-xs-5 score_a">
+  <h3><%= game.team_one.title %></h3>
+</div>
+<div class="col-md-2 col-xs-2 score_ab">
+ <h3>VS</h3>
+</div>
+<div class="col-md-5 col-xs-5 score_b">
+  <h3><%= game.team_two.title %></h3>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-xs-4"></div>
+<div class="col-md-1 col-xs-1 score_a"  >
+  <%= game.score_a %>
+</div>
+<div class="col-md-2 col-xs-2 score_ab">
+ :
+</div>
+<div class="col-md-1 col-xs-1 score_b">
+  <%= game.score_b %>
+</div>
+<div class="col-md-4 col-xs-4"></div>
+</div>
+<div class="row">
+<div class="col-md-12 score_full">
+  <%= game.full_score %>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12 col-xs-12 score_ab" >
+ <h4>Лучшими игроками стали:</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-xs-6">
+
+    <div class="score_ab">
+      <%= image_tag(game.member_one.photo.url(:medium), {width: 140}) %>
+      <div class="name"><%= short_member_name(game.member_one.title)%></div>
+   </div>
+  </div>
+   <div class="col-md-6 col-xs-6">
+     <div class="score_ab">
+       <%= image_tag(game.member_two.photo.url(:medium), {width: 140}) %>
+       <div class="name"><%= short_member_name(game.member_two.title)%></div>
+    </div>
+    </div>
+
+</div>
+
+<br><br>
