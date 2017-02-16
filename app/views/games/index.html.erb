@@ -3,9 +3,9 @@
 <h1>Архив игр</h1>
 
 <% @games.each do |game| %>
-<% if game.member_one && game.member_two %>
+
     <%= render partial: "last_game", locals: {game: game} %>
-<% end %>
+
 
 
 

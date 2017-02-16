@@ -35,6 +35,7 @@
   <%= game.full_score %>
 </div>
 </div>
+<% if game.member_one && game.member_two %>
 <div class="row">
   <div class="col-md-12 col-xs-12 score_ab" >
  <h4>Лучшими игроками стали:</h4>
@@ -56,6 +57,7 @@
     </div>
 
 </div>
+<% end %>
 
 <div class="row">
 <div class="col-md-12">
