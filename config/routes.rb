@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get '/games/all', to: 'games#all'
   resources :games
+
+
   resources :members
   resources :teams
   devise_for :users do

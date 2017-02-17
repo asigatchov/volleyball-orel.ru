@@ -1,0 +1,11 @@
+
+<div class="row">
+<div class="col-md-8">
+<p>
+<b>Игра перенесена</b><br>
+<% games.each do |game| %>
+<%= game.team_one.title %> - <%= game.team_two.title %><br/>
+<% end %>
+</p>
+</div>
+</div>

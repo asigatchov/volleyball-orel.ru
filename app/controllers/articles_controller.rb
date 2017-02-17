@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /articles
   # GET /articles.json
   def index
@@ -10,6 +10,16 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+
+    if params[:id].to_i == 1
+      @games_new = Game.future.order(:start_at)
+      @games_resheduled = Game.resheduled.order(:start_at)
+      games = render_to_string "games/_future_game", locals: {games: @games_new} , :layout => false
+      @article.content.gsub!("{FUTURE_GAMES}", games)
+      games_resheduled = render_to_string "games/_resheduled", locals: {games: @games_resheduled} , :layout => false
+      @article.content.gsub!("{RESHEDULED_GAMES}", games_resheduled)
+    end
+
   end
 
   # GET /articles/new

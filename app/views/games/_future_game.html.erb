@@ -1,0 +1,10 @@
+<% games.each do |game| %>
+<div class="row">
+<div class="col-md-12">
+<p>
+<i><b><%=   I18n.localize( game.start_at , :format => :long ) %></b></i>  <b>Место:</b> <%= game.place_name %>  </br>
+<%= game.team_one.title %> - <%= game.team_two.title %>
+</p>
+</div>
+</div>
+<% end %>
