@@ -71,7 +71,7 @@ class TournamentsController < ApplicationController
 
 
     def set_tournament
-       @tournament =  current_user.admin? ? Tournament.find(params[:id]) : Tournament.active.find(params[:id])
+       @tournament =  is_admin ? Tournament.find(params[:id]) : Tournament.active.find(params[:id])
     end
 
     def tournament_params
