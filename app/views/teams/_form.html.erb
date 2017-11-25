@@ -18,8 +18,10 @@
 
   <div class="form-group">
     <%= f.label :desc %>
-    <%= f.text_area :desc, class: "form-control",rows: 30  %>
+    <%= f.text_area :desc, class: "form-control",rows: 10  %>
   </div>
+
+  <%= f.select :gender, [:woman, :man] %>
 
   <div class="form-group">
     <%= f.label :pos %>

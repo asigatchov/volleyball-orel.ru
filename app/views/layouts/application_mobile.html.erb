@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
 
-    <title><%= @title ||  @article.try(:title)  %> Орловская волейбольная лига </title>
+    <title><%=   @article.try(:title) || @title   %> Орловская волейбольная лига </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <!-- Latest compiled and minified CSS -->
@@ -12,16 +12,7 @@
   </head>
 
   <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <a class="logo" href='/'><img width="150px" src="/logo.png" alt="Орловская Волейбольная Лига"></a>
-      </div>
-      <div class="col-md-9">
-        <h4>- Орловская волейбольная лига</h4>
-      </div>
-    </div>
-
+  <div class="container-fluid">
     <div class="row">
      <%= yield %>
     </div>

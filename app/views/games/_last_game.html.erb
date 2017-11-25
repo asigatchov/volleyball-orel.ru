@@ -45,14 +45,16 @@
   <div class="col-md-6 col-xs-6">
 
     <div class="score_ab">
-      <%= image_tag(game.member_one.photo.url(:medium), {width: 140}) %>
       <div class="name"><%= short_member_name(game.member_one.title)%></div>
+      <%= image_tag(game.member_one.photo.url(:medium), {width: 140}) %>
+      
    </div>
   </div>
    <div class="col-md-6 col-xs-6">
      <div class="score_ab">
+      <div class="name"><%= short_member_name(game.member_two.title)%></div>
        <%= image_tag(game.member_two.photo.url(:medium), {width: 140}) %>
-       <div class="name"><%= short_member_name(game.member_two.title)%></div>
+      
     </div>
     </div>
 
@@ -60,11 +62,11 @@
 <% end %>
 
 <div class="row game_br">
-<div class="col-md-12">
+<div class="col-md-12 align-right">
 <% if is_admin?  %>
-  <%= link_to 'Show', game %>
-  <%= link_to 'Edit', edit_game_path(game) %>
-  <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit', edit_game_path(game), class: "btn btn-warning" %>
+   <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-warning" %>
+   <br><br>
 <% end %>
 </div>
 </div>

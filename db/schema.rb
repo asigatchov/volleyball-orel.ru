@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215045647) do
+ActiveRecord::Schema.define(version: 20171125195946) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 20170215045647) do
     t.integer  "score_a"
     t.integer  "score_b"
     t.string   "full_score"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "rescheduled", default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "rescheduled",   default: false
+    t.integer  "tournament_id", default: 0
   end
 
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -54,6 +55,25 @@ ActiveRecord::Schema.define(version: 20170215045647) do
   create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.text     "desc",       limit: 65535
+    t.integer  "pos"
+    t.boolean  "active"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "gender",     limit: 5,     default: "man"
+  end
+
+  create_table "teams_tournaments", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "team_id"
+    t.integer "tournament_id"
+    t.index ["team_id"], name: "index_teams_tournaments_on_team_id", using: :btree
+    t.index ["tournament_id"], name: "index_teams_tournaments_on_tournament_id", using: :btree
+  end
+
+  create_table "tournaments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "desc",       limit: 65535
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "pos"
     t.boolean  "active"
     t.datetime "created_at",               null: false
@@ -76,6 +96,20 @@ ActiveRecord::Schema.define(version: 20170215045647) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "desc",          limit: 65535
+    t.string   "youtube_id"
+    t.string   "image"
+    t.integer  "tournament_id"
+    t.integer  "team_a"
+    t.integer  "team_b"
+    t.integer  "pos"
+    t.boolean  "active"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
