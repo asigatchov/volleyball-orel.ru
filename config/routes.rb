@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get '/games/all', to: 'games#all'
   resources :games
 
-
   resources :members
   resources :teams
   devise_for :users do
@@ -10,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :teams
+  resources :videos
+  resources :tournaments do
+    resources :teams
+  end
   resources :teams do
     resources :members
   end

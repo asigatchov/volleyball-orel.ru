@@ -1,0 +1,40 @@
+<h1><%= @tournament.title %></h1>
+
+<p>
+Дата проведения  c <%= @tournament.start_date%> по  <%= @tournament.end_date %>
+</p>
+
+<div class="row">
+
+<div class="col-md-6">
+<%  @teams_man = @tournament.teams.where(gender: :man, active: true) %>
+<% if @teams_man.size > 1 %>
+    <h4>Мужские команды участники: </h4>
+    <ol>
+    <% @teams_man.each do  |team| %>
+       <li><%= link_to team.title, tournament_team_path(tournament_id: @tournament, id: team.id) %> </li>
+    <% end %>
+    </ol>
+<% end %>
+<div class="col-md-6">
+<%  @teams_man = @tournament.teams.where(gender: :woman, active: true) %>
+<% if @teams_man.size > 1 %>
+    <h4>Женские команды участники: </h4>
+    <ol>
+    <% @teams_man.each do  |team| %>
+       <li><%= link_to team.title, tournament_team_path(tournament_id: @tournament, id: team.id) %> </li>
+    <% end %>
+    </ol>
+<% end %>
+</div>
+</div>
+
+  <% @tournament.games.each do  |game| %>
+    <%= render partial: "games/last_game", locals: {game: game} %>
+  <% end %>
+
+
+
+
+
+

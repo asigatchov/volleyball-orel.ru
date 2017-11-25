@@ -1,0 +1,18 @@
+<div class="row">
+<div class="col-md-12">
+<h1><%= @video.title %></h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 text-center">
+      <iframe width="560" height="315"  src="https://www.youtube.com/embed/<%= @video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 text-center">
+   <% if @video.team_one && @video.team_two %>
+   <h4><%= @video.team_one.title %> VS  <%= @video.team_two.title %></h4>
+   <% end %>
+</div>
+</div>
+
