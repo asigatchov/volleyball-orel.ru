@@ -11,4 +11,11 @@ class Game < ApplicationRecord
 
    
 
+   def title
+     if  team_one && team_two
+        [team_one.title , team_two.title].join(' vs ')
+     end
+
+   end
+
 end

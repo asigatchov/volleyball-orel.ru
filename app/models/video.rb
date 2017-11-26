@@ -4,6 +4,6 @@ class Video < ApplicationRecord
     belongs_to :team_one, class_name: "Team", foreign_key: :team_a, optional: true
     belongs_to :team_two, class_name: "Team", foreign_key: :team_b, optional: true
 
-    
+    belongs_to :game , optional: true
  
 end

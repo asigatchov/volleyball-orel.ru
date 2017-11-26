@@ -11,6 +11,7 @@ class GamesController < ApplicationController
 
 
   def show
+    @title =@game.title
   end
 
 
