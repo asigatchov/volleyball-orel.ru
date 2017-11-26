@@ -6,6 +6,7 @@ class VideosController < ApplicationController
 
 
     def show
+        @title = @video.title
         render layout: 'application_mobile'
     end
 
