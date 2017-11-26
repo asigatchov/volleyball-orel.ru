@@ -29,10 +29,12 @@
 </div>
 </div>
 
-  <% @tournament.games.each do  |game| %>
-    <%= render partial: "games/last_game", locals: {game: game} %>
-  <% end %>
+  
+    <%#= render partial: "games/last_game", locals: {game: game} %>
 
+<% @tournament.games.each do  |game| %>
+    <%= render partial: "games/all", locals: {game: game} %>
+<% end %>
 
 
 

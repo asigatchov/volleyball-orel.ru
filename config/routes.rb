@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :videos
   resources :tournaments do
     resources :teams
+    resources :games
   end
   resources :teams do
     resources :members
