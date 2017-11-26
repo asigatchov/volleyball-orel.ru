@@ -6,6 +6,7 @@ class VideosController < ApplicationController
 
 
     def show
+        render layout: 'application_mobile'
     end
 
     def new
