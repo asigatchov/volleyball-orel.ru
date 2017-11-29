@@ -1,6 +1,31 @@
-<%= link_to 'Вернуться к турниру', tournament_path(id: @game.tournament_id) %>
+
 <%= render partial: "last_game", locals: {game: @game} %>
 
-<%# render 'player' , locals: { video: @video } %>
+
+<div class="row">
+<div class="col-md-12 text-center">
+        <%= link_to 'Вернуться к турниру', tournament_path(id: @game.tournament_id), class: "btn btn-default"   %>
+        <br>
+        <br>
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-12 text-center">
+
+<%= render partial: 'videos/player' , locals: { video: @game.video } %>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-12 text-center">
+        <%= link_to 'Видео игры', video_path(id: @game.video_id), class: "btn btn-default"   %>
+        <br>
+        <br>
+</div>
+</div>
 
 

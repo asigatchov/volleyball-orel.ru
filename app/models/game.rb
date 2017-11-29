@@ -9,7 +9,7 @@ class Game < ApplicationRecord
    scope :future, -> {where(rescheduled: false).where('start_at > ?', Time.now)}
    scope :old, -> {where(rescheduled: false).where('start_at < ?', Time.now)}
 
-   
+   belongs_to :video , optional: true   
 
    def title
      if  team_one && team_two

@@ -9,6 +9,7 @@
     <%= f.input :member_a,  collection: Member.where(team_id: @game.team_a) %>
     <%= f.input :member_b,  collection: Member.where(team_id: @game.team_b) %>
     <%= f.input :tournament_id,  collection: Tournament.active %>
+    <%= f.input :video_id,  collection: Video.active %>
     <%= f.input :score_a %>
     <%= f.input :score_b %>
     <%= f.input :full_score %>
