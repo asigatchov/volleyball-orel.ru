@@ -13,9 +13,8 @@ class Game < ApplicationRecord
 
    def title
      if  team_one && team_two
-        ['Лучшие игроки -', team_one.title , 'vs', team_two.title, '-'].join(' ')
+        ['Результат встерчи  -', team_one.title , 'vs', team_two.title, '-' ,  score_a , ':', score_b ].join(' ')
      end
-
    end
 
 end
