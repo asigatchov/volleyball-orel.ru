@@ -5,6 +5,7 @@ RUN apt-get update \
   nodejs libxml2 \
   imagemagick \
   super \
+  tzdata \
   && apt-get upgrade -y -o Dpkg::Options::="--force-confold" \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && gem update bundler \
@@ -17,7 +18,7 @@ RUN apt-get update \
 RUN mkdir -p /app
 WORKDIR /app
 
-RUN groupadd  videomore  -g 1000  && useradd  -g videomore  videomore  -u 1000
+RUN groupadd  volleyball  -g 1000  && useradd  -g volleyball  volleyball  -u 1000
 
 COPY Gemfile Gemfile.lock  ./
 
