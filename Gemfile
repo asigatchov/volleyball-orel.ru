@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.2.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'jbuilder', '~> 2.5'
-gem 'sass-rails'
+gem 'sass-rails', '>= 5.0.6'
 gem 'uglifier'
-gem 'coffee-rails'
-gem 'tinymce-rails'
-gem 'devise'
+gem 'coffee-rails', '>= 4.2.1'
+gem 'tinymce-rails', '>= 4.4.3'
+gem 'devise', '>= 4.2.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -32,12 +32,12 @@ group :development, :test do
 end
 
 group :development do
-  gem "capistrano", "~> 3.6"
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails', '~> 1.2'
-  gem 'capistrano-bundler', '~> 1.2'
+  gem "capistrano", "~> 3.6", ">= 3.6.1"
+  gem 'capistrano-rvm', '>= 0.1.2'
+  gem 'capistrano-rails', '~> 1.2', '>= 1.2.0'
+  gem 'capistrano-bundler', '~> 1.2', '>= 1.2.0'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  gem 'web-console', '>= 3.4.0'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #  gem 'spring'
