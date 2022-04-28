@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.2.7', '>= 5.2.7.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
@@ -12,9 +12,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'sass-rails'
 gem 'uglifier'
-gem 'coffee-rails'
+gem 'coffee-rails', '>= 4.2.2'
 gem 'tinymce-rails'
-gem 'devise'
+gem 'devise', '>= 4.4.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -22,7 +22,7 @@ gem 'devise'
 
 # Use Capistrano for deployment
 #gem 'capistrano-rails', group: :development
-gem 'simple_form'
+gem 'simple_form', '>= 4.0.0'
 gem "paperclip", "~> 5.0.0"
 
 
